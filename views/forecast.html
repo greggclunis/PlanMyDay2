@@ -1,0 +1,22 @@
+<div ng-controller="forecastController">
+  <div  class="section pp-section weatherPanel" id="section1" data-anchor="page1">
+  <!--<img src="{{ getForecast.forecast.txt_forecast.forecastday[0].icon_url }}" />-->
+    <div class="container">
+    <div class="page_wrap">
+      {{ $scope.city }}
+<!--        <h1>{{ date | date: EEEE }}</h1>
+        <hr />
+        <div class="col-md-4 card_container" ng-repeat = "day in threeDay.forecast.txt_forecast.forecastday | limitTo: 3">
+          <div class="card">
+            <div class="card_contents">
+              <img src="{{ day.icon_url }}" />
+              <hr />
+              {{ day.fcttext }}
+            </div>
+          </div>
+        </div>
+-->
+    </div>
+    </div>
+  </div>
+</div>
