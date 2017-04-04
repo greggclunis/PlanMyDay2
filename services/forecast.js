@@ -1,19 +1,19 @@
-myDayApp.factory('forecast',  ['$http', '$scope', function($http, $scope){
-	var mykey = config.MY_WEATHER_KEY;
+myDayApp.factory('forecast',  ['$http', function($http, city){
+	return {
+		setValues: function(getValues){
+			var city = getValues.city;
+			var state = getValues.state;
 
-	$scope.submitForm = function(){
-		var city = $scope.city;
-		var state = $scope.state;
-		return $http.get('http://api.wunderground.com/api/' + mykey + '/forecast/q/' + state + '/' + city + '.json')
-			.success(function(data){
-				return data;
-			})
-			.error(function(err){
-				return err;
-			});
-	};
+			$http.get('http://api.wunderground.com/api/971501f521a3ab99/forecast/q/' + state + '/' + city + '.json')
+				.success(function(data){
+					return data;
+				})
+				.error(function(err){
+					return err;
+				});
 
-
+		}
+	}
 
 
 }]);

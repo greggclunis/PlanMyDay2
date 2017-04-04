@@ -1,11 +1,11 @@
-<div ng-controller="forecastController"  class="city_form_wrap">
+<div ng-controller="forecastController as formCtrl"  class="city_form_wrap">
   <div class="container">
-  <form class="city_form" novalidate>
+  <form class="city_form" ng-submit="formCtrl.run()" >
     <div class="col-md-9">
-      <input ng-model="city" type="text" class="col-md-12" placeholder="City" />
+      <input ng-model="formCtrl.getValues.city"  type="text" class="col-md-12" placeholder="City" />
     </div>
     <div class="col-md-3">
-      <select ng-model="state" class="select_state col-md-12" placeholder="State">
+      <select ng-model="formCtrl.getValues.state" class="select_state col-md-12" placeholder="State">
       	<option value="AL">Alabama</option>
       	<option value="AK">Alaska</option>
       	<option value="AZ">Arizona</option>
@@ -64,7 +64,7 @@
       <div class="col-md-5">
       </div>
       <div class="col-md-2">
-        <button onclick="window.location.href='#weather'" ng-click="submitForm()" class="col-md-12">Go!</button>
+        <input type="submit" class="col-md-12">
       </div>
       <div class="col-md-5">
       </div>

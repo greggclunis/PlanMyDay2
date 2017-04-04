@@ -1,8 +1,19 @@
 myDayApp.controller('forecastController', ['$scope', 'forecast',  function($scope, forecast){
 	$scope.date = new Date();
-	forecast.success(function(data){
-		$scope.threeDay = data;
-	});
+
+	$scope.getValues = {
+		city: '',
+		state: ''
+	};
+
+	$scope.run = function(){
+		console.log(this.location);
+	};
+
+
+
+
+
 
 }])
 
